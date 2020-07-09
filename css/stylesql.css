@@ -1,0 +1,33 @@
+header{
+    text-shadow: 2px 2px 2px black;
+    padding: 0.8rem;
+    color: white;  
+    font-family: admin;
+    text-align: center;
+}
+
+@font-face{
+    font-family: admin;
+    src: url(../font/MontserratBlack.ttf);
+}
+
+div.viñetas{
+    position: absolute;
+    width: 99%;
+}
+
+div.viñetas > nav, div, a, h2, fieldset, p, legend{
+    background: #ffffff;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+fieldset > p{
+    border-radius: 5px;
+    width: 95%;
+    padding: 0.5rem;
+}
+
+body, header{
+    background: #4a69bd;
+}

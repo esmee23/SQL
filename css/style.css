@@ -1,0 +1,95 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family: admin;
+    src: url(../font/MontserratBlack.ttf);
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    font-family: admin;
+    background-color: #e1f5fe;
+}
+
+.title{
+    text-align: center;
+    font-size: 40px;
+    color: #000000;
+    margin-top: 100px;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    height: 26.875rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.container > .card{
+    width:17.75rem;
+    height: 23.75rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 1.25rem;
+    text-align: center;
+    transition: all 0.25s;
+    background-color: white;
+}
+
+.container .card:hover{
+    transform:translateY(-15px);
+    box-shadow: 0 12px 16px (0, 0, 0, 0.2);
+}
+
+.container .card img{
+    width:17.75rem;
+    height: 220px;
+}
+
+.container .card h4{
+    font-weight: 600;
+}
+
+.container .card p{
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.container .card a{
+    text-decoration: none;
+    color: #8e44ad;
+}
+
+a{
+    text-decoration: none;
+    color: #8e44ad;
+}
+
+i{
+    color: #8e44ad;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    color: #8e44ad;
+    display: inline-block;
+}
+
+

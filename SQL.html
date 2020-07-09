@@ -1,0 +1,1175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/logo.png"/> 
+    <link rel="stylesheet" href="css/stylesql.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7a98527200.js" crossorigin="anonymous"></script>
+    <title>Sentencias de SQL</title>
+</head>
+<body class="tablas">
+    <header>
+          <h1>Sentencias SQL</h1>
+    </header>
+    <div class="viñetas">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-Actualizar-tab" data-toggle="tab" href="#nav-Actualizar" role="tab" aria-controls="nav-home" aria-selected="true">Actualizar</a>
+          <a class="nav-item nav-link" id="nav-Buscar-tab" data-toggle="tab" href="#nav-Buscar" role="tab" aria-controls="nav-profile" aria-selected="false">Buscar</a>
+          <a class="nav-item nav-link" id="nav-Condiciones-tab" data-toggle="tab" href="#nav-Condiciones" role="tab" aria-controls="nav-profile" aria-selected="false">Condiciones</a>
+          <a class="nav-item nav-link " id="nav-Eliminar-tab" data-toggle="tab" href="#nav-Eliminar" role="tab" aria-controls="nav-home" aria-selected="true">Eliminar</a>
+          <a class="nav-item nav-link" id="nav-Insertar-tab" data-toggle="tab" href="#nav-Insertar" role="tab" aria-controls="nav-profile" aria-selected="false">Insertar</a>
+          <a class="nav-item nav-link" id="nav-Ordenar-tab" data-toggle="tab" href="#nav-Ordenar" role="tab" aria-controls="nav-profile" aria-selected="false">Ordenar</a>
+          <a class="nav-link" href="descargas.html"><i class="fas fa-download"></i> Descargas</a>
+          <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Regresar al menú</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-Actualizar" role="tabpanel" aria-labelledby="nav-Actualizar-tab">
+          <br>
+          <h2>Actualizar | Update</h2>
+            <fieldset>
+                <p align="justify">
+                  La sentencia "UPDATE" se utiliza para modificar los valores de una tabla.
+                  <br>
+                  <br>
+                  <b>La sintaxis en SQL de UPDATE es:</b> 
+                  <br>
+                  <br>
+                  <b>UPDATE </b>nombre_tabla
+                  <br>
+                  <b>SET </b> campo1 = valor1, campo2 = valor2
+                  <br>
+                  <b>WHERE</b>  campo = valor3
+                  <br>
+                  <br>
+                  <i>Dónde:</i>
+                  <br>
+                  <b>UPDATE:</b> Indica la acción a realizar.
+                  <br>
+                  <b>SET:</b> Establece los nuevos valores para las columnas indicadas.
+                  <br>
+                  <b>WHERE:</b> Es la condición que tiene por objetivo seleccionar las filas que queremos modificar.
+                  <br>
+                  <br>
+                  <img src="img/iconfinder_bulb_1511312.png" width="4%"/><b>Aclaración:</b>  Si omite la cláusula <i>WHERE</i>, se actualizarán todos los registros de la tabla.
+                </p>
+                <b><i>Ejemplo #1</i></b>:    
+                <br> <br>            
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Lopéz</td>
+                        <td>20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Pérez</td>
+                        <td>21</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Antonio</td>
+                        <td>Hernández</td>
+                        <td>22</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    Sí queremos cambiar la EDAD y el APELLIDO de Jacob de la tabla USUARIOS, la sentencia sería la siguiente:
+                  <br><br>
+                  <b>UPDATE </b>USUARIOS
+                  <br>
+                  <b>SET </b> Edad = 23, Apellido = 'Gómez'
+                  <br>
+                  <b>WHERE</b>  id = 2
+                  <br>   
+                  <br>   
+                  Ahora la tabla USUARIOS quedaría de la siguiente manera:
+                  </p>           
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Lopéz</td>
+                        <td>20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td><b>Gómez</b></td>
+                        <td><b>23</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Antonio</td>
+                        <td>Hernández</td>
+                        <td>22</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <b><i>Ejemplo #2</i></b>:    
+                <br> <br>            
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Género</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Kira</td>
+                        <td>2</td>
+                        <td>Café con blanco</td>
+                        <td>Hembra</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">2</th>
+                        <td>Pongo</td>
+                        <td>7</td>
+                        <td>Negro</td>
+                        <td>Macho</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">3</th>
+                        <td>Danna</td>
+                        <td>1</td>
+                        <td>Blanco</td>
+                        <td>Hembra</td>
+                      </tr>
+                      <tr>
+                      <td width="4%">3 <img src="img/peligro.png" width="50%"/></td>
+                        <td>Firulais</td>
+                        <td>3</td>
+                        <td>Café</td>
+                        <td>Macho</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    Sí queremos cambiar el id de el perrito con NOMBRE Firulais de la tabla PERRITOS, la sentencia sería la siguiente:
+                  <br><br>
+                  <b>UPDATE </b>PERRITOS
+                  <br>
+                  <b>SET </b> id = 4
+                  <br>
+                  <b>WHERE</b>  Nombre='Firulais' and Edad=3
+                  <br>   
+                  <br>   
+                  Ahora la tabla PERRITOS quedaría de la siguiente manera:
+                  </p>           
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Género</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Kira</td>
+                        <td>2</td>
+                        <td>Café con blanco</td>
+                        <td>Hembra</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">2</th>
+                        <td>Pongo</td>
+                        <td>7</td>
+                        <td>Negro</td>
+                        <td>Macho</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">3</th>
+                        <td>Danna</td>
+                        <td>1</td>
+                        <td>Blanco</td>
+                        <td>Hembra</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">4</th>
+                        <td>Firulais</td>
+                        <td>3</td>
+                        <td>Café</td>
+                        <td>Macho</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </fieldset>
+        </div>
+        <div class="tab-pane fade" id="nav-Condiciones" role="tabpanel" aria-labelledby="nav-Condiciones-tab">
+          <br>
+          <h2>Dónde | Where</h2>
+            <fieldset>
+                <p align="justify">
+                  La cláusula "WHERE" se puede usar para determinar qué registros de la tabla se quieren seleccionar.
+                  <br>
+                  <br>
+                  <b>La sintaxis en SQL de WHERE es:</b> 
+                  <br>
+                  <br>
+                  <b>WHERE</b>  Campo=[Condición] <b>AND</b> Campo=[Condición] <b>OR</b>  Campo=[Condición]
+                  <br>
+                  <br>
+                  <i>Dónde:</i>
+                  <br>
+                  <b>WHERE:</b> Es la condición que tiene por objetivo seleccionar las filas que queremos modificar, seguido de las condiciones que queremos que nuestra consulta ejecute.
+                  <br>
+                  <b>AND:</b> El operador AND mostrará los resultados cuando se cumplan las 2 condiciones.
+                  <br>
+                  <b>OR:</b> El operador OR mostrará los resultados cuando se cumpla alguna de las 2 condiciones.
+                  <br>
+                  <br>
+                  <i>Otras condiciones:</i>
+                  <br>
+                  >    Mayor.
+                  <br>
+                  >= Mayor o igual.
+                  <br>
+                  <    Menor.
+                  <br>
+                  <= Menor o igual.
+                  <br>
+                  >= Mayor o igual.
+                  <br>
+                  =  Igual.
+                  <br>
+                  <> o != Distinto.
+                  <br>
+                  IS [NOT] NULL Para comprobar si el valor de una columna es o no es nula, es decir, si contiene o no contiene algún valor.
+                  <br>
+                  <br>
+                  <img src="img/iconfinder_bulb_1511312.png" width="4%"/><b>Aclaración:</b> Si no se emplea esta cláusula, la consulta devolverá todas las filas de la tabla. Al utilizar <i>WHERE </i> este debe ir a continuación de FROM.
+                </p>
+                <b><i>Ejemplo "="</i></b>:    
+                <br> <br>            
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Lopéz</td>
+                        <td>20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Pérez</td>
+                        <td>22</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Antonio</td>
+                        <td>Hernández</td>
+                        <td>22</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    Sí queremos mostrar todos los usuarios dónde su EDAD es 22 de la tabla USUARIOS, la sentencia sería la siguiente:
+                  <br><br>
+                  <b>SELECT</b>  * 
+                  <br>
+                  <b>FROM</b> USUARIOS
+                  <br>
+                  <b>WHERE</b>  EDAD = 22
+                  <br>   
+                  <br>   
+                  Ahora la consulta mostraría lo siguiente:
+                  </p>           
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Pérez</td>
+                        <td>22</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Antonio</td>
+                        <td>Hernández</td>
+                        <td>22</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <b><i>Ejemplo "AND"</i></b>:    
+                <br> <br>            
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Lopéz</td>
+                        <td>20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Pérez</td>
+                        <td>22</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Antonio</td>
+                        <td>Hernández</td>
+                        <td>22</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    Sí queremos mostrar todos los datos del usuario dónde su EDAD es 22 y su APELLIDO es Hernández de la tabla USUARIOS, la sentencia sería la siguiente:
+                  <br><br>
+                  <b>SELECT</b>  * 
+                  <br>
+                  <b>FROM</b> USUARIOS
+                  <br>
+                  <b>WHERE</b>  EDAD = 22 <b>AND</b> APELLIDO='Hernández'
+                  <br>   
+                  <br>   
+                  Ahora la consulta mostraría lo siguiente:
+                  </p>           
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Antonio</td>
+                        <td>Hernández</td>
+                        <td>22</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </p>     
+                  <b><i>Ejemplo "OR"</i></b>:    
+                <br> <br>            
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Lopéz</td>
+                        <td>20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Pérez</td>
+                        <td>22</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Antonio</td>
+                        <td>Hernández</td>
+                        <td>22</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    Sí queremos mostrar todos los Usuarios que tengan NOMBRE Mark o su APELLIDO sea Peréz de la tabla USUARIOS, la sentencia sería la siguiente:
+                  <br><br>
+                  <b>SELECT</b>  * 
+                  <br>
+                  <b>FROM</b> USUARIOS
+                  <br>
+                  <b>WHERE</b> NOMBRE='Mark' <b>OR</b> APELLIDO='Peréz'
+                  <br>   
+                  <br>   
+                  Ahora la consulta mostraría lo siguiente:
+                  </p>
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Lopéz</td>
+                        <td>20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Pérez</td>
+                        <td>22</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </fieldset>
+        </div>
+        <div class="tab-pane fade" id="nav-Eliminar" role="tabpanel" aria-labelledby="nav-Eliminar-tab">
+          <br>
+          <h2>Eliminar | Delete</h2>
+            <fieldset>
+                <p align="justify">
+                  La sentencia "DELETE" sirve para borrar filas de una tabla.
+                  <br>
+                  <br>
+                  <b>La sintaxis en SQL de DELETE es:</b> 
+                  <br><br>
+                  <b>DELETE</b> <b>FROM</b> 
+                  <br>
+                  <b>WHERE</b>  EDAD = 20 
+                  <br>
+                  <br>
+                  <i>Dónde:</i>
+                  <br>
+                  <b>DELETE:</b> El comando DELETE sirve para deshacernos de los registros de una tabla.
+                  <br>
+                  <b>FROM:</b> Esta especifica los orígenes de los datos.
+                  <br>
+                  <br>
+                  <img src="img/iconfinder_bulb_1511312.png" width="4%"/><b>Aclaración:</b>  Si omite la cláusula <i>WHERE</i>, se eliminarán todos los registros de la tabla.
+                </p>
+                <b><i>Ejemplo #1</i></b>:    
+                <br> <br>            
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Lopéz</td>
+                        <td>20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Pérez</td>
+                        <td>22</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Antonio</td>
+                        <td>Hernández</td>
+                        <td>22</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    Sí queremos elimnar todos los datos de los usuarios que tengan NOMBRE Antonio, la sentencia sería la siguiente:
+                  <br><br>
+                  <b>DELETE</b>  
+                  <br>
+                  <b>FROM</b> USUARIOS
+                  <br>
+                  <b>WHERE</b> NOMBRE='Antonio' 
+                  <br>   
+                  <br>   
+                  Ahora la consultamos los datos de la tabla con la siguiente instrucción:
+                  <br><br>
+                  <b>SELECT</b> *  
+                  <br>
+                  <b>FROM</b> USUARIOS
+                  <br>   
+                  <br>   
+                  Esta consulta mostraría lo siguiente:
+                  </p>
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Lopéz</td>
+                        <td>20</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Pérez</td>
+                        <td>22</td>
+                      </tr>
+                    </tbody>
+                  </table>
+        </div>
+        <div class="tab-pane fade" id="nav-Insertar" role="tabpanel" aria-labelledby="nav-Insertar-tab">
+          <br>
+          <h2>Insertar | Insert</h2>
+            <fieldset>
+                <p align="justify">
+                  La sentencia "INSERT" se utiliza para insertar nuevas filas en una tabla.
+                  <br>
+                  <br>
+                  <b>La sintaxis en SQL de INSERT es:</b> 
+                  <br>
+                  <br>
+                  <b>INSERT INTO </b>nombre_tabla (columna1, columna2, columna3,.)
+                  <br>
+                  <b>VALUES </b> (valor1, valor2, valor3,)
+                  <br>
+                  <br>
+                  <i>Dónde:</i>
+                  <br>
+                  <b>INSERT :</b> Indica la acción a realizar.
+                  <br>
+                  <b>INTO :</b> Se utiliza para indicar que los datos se insertaran dentro de una tabla.
+                  <br>
+                  <b>VALUES :</b> Es la condición que tiene por objetivo seleccionar las filas que queremos modificar.
+                  <br>
+                  <br>
+                  <img src="img/iconfinder_bulb_1511312.png" width="4%"/><b>Aclaración:</b>  Si omite la cláusula <i>WHERE</i>, se actualizarán todos los registros de la tabla.
+                </p>
+                <b><i>Ejemplo #1</i></b>:    
+                <br> <br>            
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Edad</th>
+                      <th scope="col">Color</th>
+                      <th scope="col">Género</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Kira</td>
+                      <td>2</td>
+                      <td>Café con blanco</td>
+                      <td>Hembra</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                      <td>Pongo</td>
+                      <td>7</td>
+                      <td>Negro</td>
+                      <td>Macho</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">3</th>
+                      <td>Danna</td>
+                      <td>1</td>
+                      <td>Blanco</td>
+                      <td>Hembra</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">4</th>
+                      <td>Firulais</td>
+                      <td>3</td>
+                      <td>Café</td>
+                      <td>Macho</td>
+                    </tr>
+                  </tbody>
+                </table>
+                  <p>
+                    Sí queremos insertar una nueva mascota a la tabla PERRITOS, la sentencia sería la siguiente:
+                  <br><br>
+                  <b>INSERT INTO </b>PERRITOS(Nombre, Edad, Color, Género)
+                  <br>
+                  <b>VALUES </b> ('Niebla', 8,'Gris', 'Hembra')
+                  <br>   
+                  <br>   
+                  Ahora la tabla USUARIOS quedaría de la siguiente manera:
+                  </p>  
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Género</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Kira</td>
+                        <td>2</td>
+                        <td>Café con blanco</td>
+                        <td>Hembra</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">2</th>
+                        <td>Pongo</td>
+                        <td>7</td>
+                        <td>Negro</td>
+                        <td>Macho</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">3</th>
+                        <td>Danna</td>
+                        <td>1</td>
+                        <td>Blanco</td>
+                        <td>Hembra</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">4</th>
+                        <td>Firulais</td>
+                        <td>3</td>
+                        <td>Café</td>
+                        <td>Macho</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                          <td>Niebla</td>
+                          <td>8</td>
+                          <td>Gris</td>
+                          <td>Hembra</td>
+                        </tr>
+                    </tbody>
+                  </table> 
+                  <b><i>Ejemplo #2</i></b>:    
+                <br> <br>            
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Edad</th>
+                      <th scope="col">Color</th>
+                      <th scope="col">Género</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Kira</td>
+                      <td>2</td>
+                      <td>Café con blanco</td>
+                      <td>Hembra</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                      <td>Pongo</td>
+                      <td>7</td>
+                      <td>Negro</td>
+                      <td>Macho</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">3</th>
+                      <td>Danna</td>
+                      <td>1</td>
+                      <td>Blanco</td>
+                      <td>Hembra</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">4</th>
+                      <td>Firulais</td>
+                      <td>3</td>
+                      <td>Café</td>
+                      <td>Macho</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                        <td>Niebla</td>
+                        <td>8</td>
+                        <td>Gris</td>
+                        <td>Hembra</td>
+                      </tr>
+                  </tbody>
+                </table>
+                  <p>
+                    Sí queremos insertar dos mascotas mas a la tabla PERRITOS, la sentencia sería la siguiente:
+                  <br><br>
+                  <b>INSERT INTO </b>PERRITOS(Nombre, Edad, Color, Género)
+                  <br>
+
+                  <br>
+                  <b>VALUES </b> ('Wilson', 4,'Café', 'Macho'), ('Destiny', 5,'Blanco', 'Hembra');
+                  <br>   
+                  <br>   
+                  Ahora la tabla USUARIOS quedaría de la siguiente manera:
+                  </p>  
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Género</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Kira</td>
+                        <td>2</td>
+                        <td>Café con blanco</td>
+                        <td>Hembra</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">2</th>
+                        <td>Pongo</td>
+                        <td>7</td>
+                        <td>Negro</td>
+                        <td>Macho</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">3</th>
+                        <td>Danna</td>
+                        <td>1</td>
+                        <td>Blanco</td>
+                        <td>Hembra</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">4</th>
+                        <td>Firulais</td>
+                        <td>3</td>
+                        <td>Café</td>
+                        <td>Macho</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                          <td>Niebla</td>
+                          <td>8</td>
+                          <td>Gris</td>
+                          <td>Hembra</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                          <td>Wilson</td>
+                          <td>4</td>
+                          <td>Café</td>
+                          <td>Macho</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7</th>
+                          <td>Destiny</td>
+                          <td>5</td>
+                          <td>Blanco</td>
+                          <td>Hembra</td>
+                      </tr>                        
+                    </tbody>
+                  </table> 
+        </div>
+      </fieldset>
+        <div class="tab-pane fade" id="nav-Ordenar" role="tabpanel" aria-labelledby="nav-Ordenar-tab">
+          <br>
+          <h2>Ordenar | Order</h2>
+            <fieldset>
+                <p align="justify">
+                  ORDER BY se utiliza para ordenar los resultados de una consulta, según el valor de la columna especificada.
+                  <br>
+                  <br>
+                  <b>La sintaxis en SQL de ORDER es:</b> 
+                  <br>
+                  <br>
+                  <b>SELECT </b>nombre_columna(s)
+                  <br>
+                  <b>FROM  </b> nombre_tabla
+                  <br>
+                  <b>ORDER BY</b> nombre_columna(s) <b>ASC|DESC</b>
+                  <br>
+                  <br>
+                  <i>Dónde:</i>
+                  <br>
+                  <b>ORDER :</b> Indica la acción a realizar.
+                  <br>
+                  <b>BY :</b> Indica el campo que usará para ordenar el valor de la columna.
+                  <br>
+                  <b>ASC|DESC :</b> Especifica el formato del orden (Ascendente o descendente)
+                  <br>
+                  <br>
+                  <img src="img/iconfinder_bulb_1511312.png" width="4%"/><b>Aclaración:</b>  Si omite la especificar si el orden será ascendente o descendente, por defecto se ordenarán de forma ascendente según los valores de la columna.
+                </p>
+                <b><i>Ejemplo #2</i></b>:    
+                <br>
+                <br>
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Edad</th>
+                      <th scope="col">Color</th>
+                      <th scope="col">Género</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Kira</td>
+                      <td>2</td>
+                      <td>Café con blanco</td>
+                      <td>Hembra</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                      <td>Pongo</td>
+                      <td>7</td>
+                      <td>Negro</td>
+                      <td>Macho</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">3</th>
+                      <td>Danna</td>
+                      <td>1</td>
+                      <td>Blanco</td>
+                      <td>Hembra</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">4</th>
+                      <td>Firulais</td>
+                      <td>3</td>
+                      <td>Café</td>
+                      <td>Macho</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                        <td>Niebla</td>
+                        <td>8</td>
+                        <td>Gris</td>
+                        <td>Hembra</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                        <td>Wilson</td>
+                        <td>4</td>
+                        <td>Café</td>
+                        <td>Macho</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                        <td>Destiny</td>
+                        <td>5</td>
+                        <td>Blanco</td>
+                        <td>Hembra</td>
+                    </tr>                        
+                  </tbody>
+                </table>    
+                <p>
+                  Sí queremos ordenar los datos por EDAD de manera ascendente la tabla PERRITOS, la sentencia sería la siguiente:
+                <br><br>
+                  <b>SELECT </b> *
+                  <br>
+                  <b>FROM  </b> PERRITOS
+                  <br>
+                  <b>ORDER BY</b> Edad <b>ASC</b>
+                  <br>
+                  <br>
+                 Ahora la tabla PERRITOS quedaría de la siguiente manera:
+                </p>  
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Edad</th>
+                      <th scope="col">Color</th>
+                      <th scope="col">Género</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                    <th scope="row">3</th>
+                      <td>Danna</td>
+                      <td>1</td>
+                      <td>Blanco</td>
+                      <td>Hembra</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Kira</td>
+                      <td>2</td>
+                      <td>Café con blanco</td>
+                      <td>Hembra</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">4</th>
+                      <td>Firulais</td>
+                      <td>3</td>
+                      <td>Café</td>
+                      <td>Macho</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                        <td>Wilson</td>
+                        <td>4</td>
+                        <td>Café</td>
+                        <td>Macho</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                        <td>Destiny</td>
+                        <td>5</td>
+                        <td>Blanco</td>
+                        <td>Hembra</td>
+                    </tr>                        
+                    <tr>
+                    <th scope="row">2</th>
+                      <td>Pongo</td>
+                      <td>7</td>
+                      <td>Negro</td>
+                      <td>Macho</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                        <td>Niebla</td>
+                        <td>8</td>
+                        <td>Gris</td>
+                        <td>Hembra</td>
+                    </tr>
+                  </tbody>
+                </table>  
+        </div>
+      </fieldset>
+        <div class="tab-pane fade" id="nav-Buscar" role="tabpanel" aria-labelledby="nav-Buscar-tab">
+          <br>
+          <h2>Búsqueda de datos</h2>
+            <fieldset>
+                <p align="justify">
+                  <b>LIKE: </b> Es un operador lógico utilizado para determinar si una cadena específica coincide con un patrón específico. Por lo general, se usa en la instrucción "Where" para encontrar un patrón específico de una columna.
+                  <br>
+                  <br>
+                  <b>La sintaxis en SQL de LIKE es:</b> 
+                  <br>
+                  <br>
+                  <b>SELECT </b>*
+                  <br>
+                  <b>FROM  </b> nombre_tabla
+                  <br>
+                  <b>WHERE</b> nombre_columna(s) <b>LIKE '%A%'</b>
+                  <br>
+                  <br>
+                  Con la combinación de estos caracteres podremos obtener múltiples patrones de búsqueda. Por ejemplo:
+                  <br>
+                  <br>
+                  <b>El nombre empieza por A:</b> Nombre LIKE 'A%'
+                  <br>
+                  <b>El nombre acaba por A:</b> Nombre LIKE '%A'
+                  <br>
+                  <b>El nombre contiene la letra A:</b> Nombre LIKE '%A%'
+                  <br>
+                  <b>El nombre empieza por A y después contiene un solo carácter cualquiera:</b> Nombre LIKE 'A_'
+                  <br>
+                  <b>El nombre empieza una A, después cualquier carácter, luego una E y al final cualquier cadena de caracteres:</b> Nombre LIKE 'A_E%'
+                  <br>
+                  <br> 
+                  <b><i>Ejemplo:</i></b>: 
+                  <p>
+                    Sí queremos mostrar todos los datos de las mascotas donde su nombre termina con A de la tabla PERRITOS, la sentencia sería la siguiente:
+                  <br><br>
+                    <b>SELECT </b> *
+                    <br>
+                    <b>FROM  </b> PERRITOS
+                    <br>
+                    <b>WHERE</b> Nombre <b>LIKE '%A'</b>
+                    <br>
+                    <br>
+                   Ahora la consulta mostraría lo siguiente:
+                  </p>  
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Género</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Kira</td>
+                        <td>2</td>
+                        <td>Café con blanco</td>
+                        <td>Hembra</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">3</th>
+                        <td>Danna</td>
+                        <td>1</td>
+                        <td>Blanco</td>
+                        <td>Hembra</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                          <td>Niebla</td>
+                          <td>8</td>
+                          <td>Gris</td>
+                          <td>Hembra</td>
+                      </tr>
+                    </tbody>
+                  </table>     
+                  <hr>
+                  <br>
+                  <b>BETWEEN : </b> El operador BETWEEN selecciona valores dentro de un rango determinado. Los valores pueden ser números, texto o fechas.
+                  <br>
+                  <br>
+                  <b>La sintaxis en SQL de BETWEEN es:</b> 
+                  <br>
+                  <br>
+                  <b>SELECT </b>*
+                  <br>
+                  <b>FROM  </b> nombre_tabla
+                  <br>
+                  <b>WHERE</b> nombre_columna(s) <b>BETWEEN</b> value1 <b>AND</b> value2
+                  <br>
+                  <br> 
+                  <b><i>Ejemplo:</i></b>: 
+                  <p>
+                    Sí queremos mostrar todos los datos de las mascotas donde su edad sea entre 3 a 8 años de la tabla PERRITOS, la sentencia sería la siguiente:
+                  <br>
+                  <br>
+                    <b>SELECT </b> *
+                    <br>
+                    <b>FROM  </b> PERRITOS
+                    <br>
+                    <b>WHERE</b> Edad <b>BETWEEN</b> 3 <b>AND</b> 8
+                    <br>
+                    <br>
+                   Ahora la consulta mostraría lo siguiente:
+                  </p>  
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Género</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                      <th scope="row">2</th>
+                        <td>Pongo</td>
+                        <td>7</td>
+                        <td>Negro</td>
+                        <td>Macho</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">4</th>
+                        <td>Firulais</td>
+                        <td>3</td>
+                        <td>Café</td>
+                        <td>Macho</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                          <td>Niebla</td>
+                          <td>8</td>
+                          <td>Gris</td>
+                          <td>Hembra</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                          <td>Wilson</td>
+                          <td>4</td>
+                          <td>Café</td>
+                          <td>Macho</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7</th>
+                          <td>Destiny</td>
+                          <td>5</td>
+                          <td>Blanco</td>
+                          <td>Hembra</td>
+                      </tr>                        
+                    </tbody>
+                  </table>  
+                </p>
+            </fieldset>
+        </div>
+        <div class="tab-pane fade" id="nav-descargas" role="tabpanel" aria-labelledby="nav-descargas-tab">
+
+        </div>
+      </div>
+  </div>
+    <br>
+    <br>
+        <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      </body>
+</html>
+
